@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>X University Portal</title>
+  </head>
+
+    <body>
+
+      <h1>Add Grades</h1>
+
+    <div>
+
+    <form action ="/results/add" method="POST">
+      Student ID:
+        <select name="studentid">
+          <option value="{{ students.studentid }}"></option>
+        </select><br>
+      Quiz Number
+        <select name="studentid">
+          <option value="{{ quizzes.quizid }}"></option>
+            </select><br>
+      Grade:
+        <input type="text" name="score"></input><br>
+      <input type="submit" value="Add Grade">
+    </form>
+
+  </body>
+</html>
