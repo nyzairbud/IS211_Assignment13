@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>X University Portal</title>
+  </head>
+
+    <body>
+
+      <h1>Dashboard</h1>
+
+    <TABLE BORDER="5"    WIDTH="50%"   CELLPADDING="4" CELLSPACING="3">
+       <TR>
+          <TH COLSPAN="3"><BR><H2>STUDENTS</H2>
+          </TH>
+       </TR>
+       <TR>
+          <TH>Student ID</TH>
+          <TH>Firstname</TH>
+          <TH>Lastname</TH>
+       </TR>
+       {% for student in students %}
+       <TR ALIGN="CENTER">
+           <TD><a href="{{ url_for('newgrade') }}">{{ student.studentid }}</a></TD>
+           <TD>{{ student.firstname }}</TD>
+           <TD>{{ student.lastname }}</TD>
+       </TR>
+       {% endfor %}
+    </TABLE>
+    <br>
+
+
+<p>.....Click on a student's id number to view quiz results.....</p>
+<a href="{{ url_for('newstudent') }}">Add Student</a>
+<br>
+<br>
+
+    <TABLE BORDER="5"    WIDTH="50%"   CELLPADDING="4" CELLSPACING="3">
+
+       <TR>
+          <TH COLSPAN="4"><BR><H2>QUIZZES</H2>
+          </TH>
+       </TR>
+       <TR>
+         <TH>Quiz #</TH>
+         <TH>Subject</TH>
+         <TH>Questions</TH>
+         <TH>Date Given</TH>
+       </TR>
+       {% for quiz in quizzes %}
+       <TR ALIGN="CENTER">
+          <TD> {{ quiz.quizid }} </TD>
+          <TD> {{ quiz.subject }} </TD>
+          <TD> {{ quiz.questions }} </TD>
+          <TD> {{ quiz.date }} </TD>
+       </TR>
+       {% endfor %}
+    </TABLE>
+    <br>
+
+<a href="{{ url_for('newquiz') }}">Add Quiz</a>
+<br>
+<br>
+<a href="{{ url_for('newgrade') }}">Add Quiz Result</a>
+
+  </body>
+</html>
